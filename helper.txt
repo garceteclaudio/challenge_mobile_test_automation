@@ -1,0 +1,7 @@
+Crear entorno virtual
+
+python -m venv venv
+
+Instalar librerias
+
+pip3 install -r requirements.txt
