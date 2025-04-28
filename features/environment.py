@@ -1,14 +1,17 @@
 from appium import webdriver
-
 import os
 from appium.options.android import UiAutomator2Options
-
-
-import os
 
 import allure
 import random
 
+
+
+#'appPackage': "com.google.android.calculator",
+#'appActivity': 'com.android.calculator2.Calculator',
+
+#com.ebay.mobile/com.ebay.mobile.home.impl.main.MainActivity
+#com.amazon.mShop.android.shopping/com.amazon.mShop.startup.StartupLocalizationSelectionActivity
 claudio_real_device_samsung = {
                         #'platformVersion': '14.0',
                         'platformName': 'Android',
@@ -17,10 +20,9 @@ claudio_real_device_samsung = {
                          #'app': os.path.abspath(os.path.join(__file__, "../../src/binaries/app-debugQA4-274.apk")),
                         'autoAcceptAlerts': 'true',  # to accept all alerts
                         'autoGrantPermissions': 'true',
-                        'appPackage': "com.google.android.calculator",
-                        'appActivity': 'com.android.calculator2.Calculator',
-                        # on Android will keep your app cache saved and with new Appium session
-                        'noReset': 'false',
+                        'appPackage': "com.amazon.mShop.android.shopping",
+                        'appActivity': 'com.amazon.mShop.splashscreen.StartupActivity',  # Actividad de splash
+                        'noReset': True,
                         'printPageSourceOnFindFailure': 'true',
                         #'fullReset': 'true'
                         'newCommandTimeout': 800,
@@ -99,4 +101,4 @@ def after_scenario(context, scenario):
     #print("Finaliza: " + scenario.name)
     # Invoke driver.quit() after the test is done to indicate to BrowserStack
     # that the test is completed. Otherwise, test will appear as timed out on BrowserStack.
-    context.driver.quit()
+    #context.driver.quit()
