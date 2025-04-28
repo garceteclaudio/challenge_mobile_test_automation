@@ -1,16 +1,127 @@
-*/local.log
-*/.pyc
-/.DS_Store
-**/env
-.idea/
-
 # Byte-compiled / optimized / DLL files
-pycache/
+__pycache__/
+*.py[cod]
+*$py.class
 
+# Python cache
+.pytest_cache/
+.mypy_cache/
+
+# Environments
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# IDE specific files
+.idea/
+.vscode/
+*.swp
+*.swo
+*.sublime-workspace
+*.sublime-project
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Log files
+*.log
+local.log
+
+# Test and reports
 reports/
 output/
-venv/
+allure-results/
+*.xml
+*.junit
 
-# IDEs project files
-.idea
-.vscode
+# Appium specific
+*.app
+*.ipa
+*.apk
+
+# Coverage reports
+.coverage
+htmlcov/
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.nox/
+.coverage
+*.cover
+*.py,cover
+.hypothesis/
+.pytest_cache/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# pyenv
+.python-version
+
+# celery beat schedule file
+celerybeat-schedule
+
+# SageMath parsed files
+*.sage.py
+
+# Environments
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Spyder project settings
+.spyderproject
+.spyproject
+
+# Rope project settings
+.ropeproject
+
+# mkdocs documentation
+/site
+
+# mypy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Pyre type checker
+.pyre/
+
+# pytype static type analyzer
+.pytype/
+
+# Cython debug symbols
+cython_debug/
+
+# Virtual environments
+**/env/
+**/venv/

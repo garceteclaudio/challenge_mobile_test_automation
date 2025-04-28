@@ -1,10 +1,10 @@
-from appium.webdriver.common.appiumby import AppiumBy
 from behave import *
 #from asserts import assert_true, assert_equal, assert_raises
+from pages.LoginPage import LoginPage
 
 @given(u'the user opens the Amazon app')
 def step_impl(context):
-    ...
+    context.login_page = LoginPage(context.driver)
 
 @then('the user should see "{text}" section')
 def step_impl(context, text):
