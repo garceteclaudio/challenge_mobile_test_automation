@@ -12,4 +12,4 @@ class LocalizationPage(BasePage):
         self.click_element_if_present(self.noPermitirButton, timeout=2)
 
     def click_finalizado_button(self):
-        self.click_element_if_present(self.finalizadoButton, timeout=2)
+        self.click_element_if_present(self.finalizadoButton, timeout=6)

@@ -12,6 +12,7 @@ class IngresaATuCuentaPage(BasePage):
 
     def click_ya_eres_cliente_button(self):
         self.click_element(self.yaEresClienteButton)
+        #self.click_element(self.yaEresClienteButton)
 
     def get_ingresar_a_tu_cuenta_text(self):
         return self.get_element_text(self.ingresarATuCuentaText)

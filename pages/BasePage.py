@@ -30,6 +30,7 @@ class BasePage:
 
     def sleep(self, seconds):
         """Espera fija (usar solo cuando sea estrictamente necesario)"""
+        print("Dormir: ", seconds)
         time.sleep(seconds)
         return self
 

@@ -4,5 +4,3 @@ value = "@amazon_login"
 
 #behave_main("-f allure_behave.formatter:AllureFormatter -o reports/ "+value)
 behave_main("--tags="+value+" -f allure_behave.formatter:AllureFormatter -o reports/")
-
-

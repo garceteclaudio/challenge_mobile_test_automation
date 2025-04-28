@@ -7,10 +7,11 @@ Feature: Amazon App Login Functionality
         And the user taps on Finalizado button
         Then the user should see Ingresar a tu cuenta section
         When the user taps on ¿Ya eres cliente? Iniciar sesion. button
-        #And the user enters "valid email address"
-        #And the user enters "valid password"
-        #And the user taps on "Iniciar Sesion" button
-        #Then the user should be redirected to the Home section
+        And the user enters a valid email adress "<user_email>"
+        And the user taps on Continuar button
+        And the user enters a valid password
+        And the user taps on Iniciar Sesion button
+        Then the user should be redirected to the Home section
         Examples:
-            | test_case_id      | app_name  |
-            | DebitsAutomation  | amazon    |
+            | user_email                   |
+            | tester@gmail.com     |
