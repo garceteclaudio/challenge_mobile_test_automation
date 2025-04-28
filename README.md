@@ -27,6 +27,22 @@ This project is a technical challenge for PinApp, implementing automated tests f
    venv\Scripts\activate    # Windows
 3. Install dependencies:
 pip install -r requirements.txt
+4. Create a `.env` file in the project root with:
+   ```ini
+   APP_PASSWORD=your_amazon_password_here
+   
+## ⚙ Configuration
+
+##### Mobile capabilities: 
+- Set in environment.py
+##### API endpoints: 
+- Configured in test steps
+##### Report settings: 
+- See behave.ini
+##### Login credentials:
+- Email: Set in feature file login.feature
+
+- Password: Set in .env file
 
 ## 🏗 Project Structure
 ![Captura de pantalla 2025-04-28 a la(s) 4.11.15 a. m..png](..%2F..%2F..%2F..%2Fvar%2Ffolders%2Fz1%2Fjydw8bnj62l6tdxv522_z1_w0000gn%2FT%2FTemporaryItems%2FNSIRD_screencaptureui_n9IESt%2FCaptura%20de%20pantalla%202025-04-28%20a%20la%28s%29%204.11.15%E2%80%AFa.%C2%A0m..png)
@@ -46,11 +62,6 @@ allure generate reports -o allure_report_output --clean
 ### Serve report (view in browser)
 allure serve reports
 
-## ⚙ Configuration
-
-##### Mobile capabilities: Set in environment.py
-##### API endpoints: Configured in test steps
-##### Report settings: See behave.ini
 
 ## 📧 Contact
 #### For questions or issues, please contact:
