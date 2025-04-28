@@ -81,7 +81,7 @@ def before_scenario(context, scenario):
     context.driver = webdriver.Remote(command_executor=appium_server_url,options=capabilities_options)
     #context.app = Application(context.driver)
     #context.driver.execute_script('mobile: startActivity',{'component': f'ar.com.bancor.bancon/ar.com.bancor.bancon.MainActivity',})
-    context.driver.implicitly_wait(20)
+    ####context.driver.implicitly_wait(20)
 
     #context.app.ambiente = AMBIENTE
     #context.chromedriver_path = chromedriver_path
