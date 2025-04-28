@@ -2,8 +2,8 @@
 
 ## Overview
 This project is a technical challenge for PinApp, implementing automated tests for:
-1. Mobile testing of the Amazon app (login functionality)
-2. API integration testing
+1. Mobile testing of the Amazon app (login and search product functionality)
+2. API integration testing (POST and GET)
 
 ## 📌 Project Details
 **Author**: Claudio Rodolfo Garcete  
@@ -12,13 +12,13 @@ This project is a technical challenge for PinApp, implementing automated tests f
 
 ## 🚀 Quick Start
 
-### Prerequisites
+## Prerequisites
 - Python 3.8+
 - Appium server
 - Android SDK (for mobile tests)
 - Allure commandline tools
 
-### Installation
+## Installation
 1. Clone the repository
 2. Set up virtual environment:
    ```bash
@@ -26,7 +26,8 @@ This project is a technical challenge for PinApp, implementing automated tests f
    source venv/bin/activate  # Linux/Mac
    venv\Scripts\activate    # Windows
 3. Install dependencies:
-pip install -r requirements.txt
+    ```bash
+   pip install -r requirements.txt
 4. Create a `.env` file in the project root with:
    ```ini
    APP_PASSWORD=your_amazon_password_here
@@ -45,22 +46,15 @@ pip install -r requirements.txt
 - Password: Set in .env file
 
 ## 🏃 Running Tests
-#### Run all tests
-behave
 
-#### Run specific feature
-behave features/login.feature
+Run runner.py and set tags to run specif scenarios.
 
 ## 📊 Generating Reports
-### Generate Allure report
-allure generate reports -o allure_report_output --clean
-
-### Serve report (view in browser)
-allure serve reports
 
 ### Gerate Allure HTML report
-allure generate --single-file reports -o allure_report_output --report-name "Mi Reporte de Pruebas" --lang es --clean
-
+   
+    allure generate --single-file reports -o allure_report_output --report-name "Mi Reporte de Pruebas" --lang es --clean
+ 
 ## 📧 Contact
 #### For questions or issues, please contact:
-📩 garcete.claudio@gmail.com
+garcete.claudio@gmail.com
