@@ -9,7 +9,7 @@ for folder in folders_to_remove:
         shutil.rmtree(folder)
         print(f"Se eliminó la carpeta: {folder}")
 
-value = "@amazon_login"
+value = "@search_products"
 
 # Ejecutar Behave con Allure
 behave_main("--tags=" + value + " -f allure_behave.formatter:AllureFormatter -o reports/")

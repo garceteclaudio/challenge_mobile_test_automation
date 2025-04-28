@@ -2,7 +2,7 @@ import time
 from appium.webdriver.common.appiumby import AppiumBy
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
-from selenium.common.exceptions import TimeoutException
+from selenium.common.exceptions import TimeoutException, NoSuchElementException
 
 
 class BasePage:
@@ -61,3 +61,6 @@ class BasePage:
     def get_element_text(self, locator):
         element = self.wait.until(EC.visibility_of_element_located(locator))
         return element.text
+
+    def press_keycode(self, keycode):
+        self.driver.press_keycode(keycode)

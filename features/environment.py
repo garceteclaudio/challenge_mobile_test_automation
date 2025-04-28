@@ -46,13 +46,17 @@ def after_step(context, step):
 
 
 def before_scenario(context, scenario):
-    # Verificar si el escenario tiene el tag @amazon_login
-    if 'amazon_login' not in scenario.tags:
-        return  # Salir si no tiene el tag
+    # Definir los tags que deben activar el environment
+    TAGS_REQUERIDOS = {'smoke_test', 'search_products', 'amazon_login'}
+
+    # Verificar si el escenario tiene alguno de los tags requeridos
+    if not any(tag in scenario.tags for tag in TAGS_REQUERIDOS):
+        return  # Salir si no tiene los tags requeridos
 
     print(
         "....................................................................................................................................................")
     print("En ejecucion: " + scenario.name)
+    print(f"Tags del escenario: {scenario.tags}")
     print(
         "....................................................................................................................................................")
 
@@ -62,9 +66,10 @@ def before_scenario(context, scenario):
 
 
 def after_scenario(context, scenario):
-    # Verificar si el escenario tiene el tag @amazon_login
-    if 'amazon_login' not in scenario.tags:
-        return  # Salir si no tiene el tag
+    # Verificar si el escenario tiene los tags requeridos
+    TAGS_REQUERIDOS = {'smoke_test', 'search_products', 'amazon_login'}
+    if not any(tag in scenario.tags for tag in TAGS_REQUERIDOS):
+        return  # Salir si no tiene los tags requeridos
 
     random_number = random.randint(1, 10000)
     miscreenshotname = "screenshoot" + str(random_number)
