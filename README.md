@@ -44,10 +44,6 @@ pip install -r requirements.txt
 
 - Password: Set in .env file
 
-## 🏗 Project Structure
-![Captura de pantalla 2025-04-28 a la(s) 4.11.15 a. m..png](..%2F..%2F..%2F..%2Fvar%2Ffolders%2Fz1%2Fjydw8bnj62l6tdxv522_z1_w0000gn%2FT%2FTemporaryItems%2FNSIRD_screencaptureui_n9IESt%2FCaptura%20de%20pantalla%202025-04-28%20a%20la%28s%29%204.11.15%E2%80%AFa.%C2%A0m..png)
-
-
 ## 🏃 Running Tests
 #### Run all tests
 behave
@@ -62,6 +58,8 @@ allure generate reports -o allure_report_output --clean
 ### Serve report (view in browser)
 allure serve reports
 
+### Gerate Allure HTML report
+allure generate --single-file reports -o allure_report_output --report-name "Mi Reporte de Pruebas" --lang es --clean
 
 ## 📧 Contact
 #### For questions or issues, please contact:
