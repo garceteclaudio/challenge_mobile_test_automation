@@ -126,3 +126,5 @@ cython_debug/
 # Virtual environments
 **/env/
 **/venv/
+
+allure_report_output

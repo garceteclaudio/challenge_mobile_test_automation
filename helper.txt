@@ -5,3 +5,6 @@ python -m venv venv
 Instalar librerias
 
 pip3 install -r requirements.txt
+
+Generar reporte
+allure generate --single-file reports -o allure_report_output --report-name "Mi Reporte de Pruebas" --lang es --clean

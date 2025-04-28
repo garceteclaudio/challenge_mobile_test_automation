@@ -48,18 +48,24 @@ def before_scenario(context, scenario):
     print("....................................................................................................................................................")
     print("En ejecucion: " + scenario.name)
     print("....................................................................................................................................................")
-    appium_server_url = 'http://127.0.0.1:4723/wd/hub'
-    capabilities_options = UiAutomator2Options().load_capabilities(claudio_real_device_samsung)
-    context.driver = webdriver.Remote(command_executor=appium_server_url,options=capabilities_options)
+    if (scenario.name=="User successfully logs into the Amazon application"):
+        appium_server_url = 'http://127.0.0.1:4723/wd/hub'
+        capabilities_options = UiAutomator2Options().load_capabilities(claudio_real_device_samsung)
+        context.driver = webdriver.Remote(command_executor=appium_server_url,options=capabilities_options)
+    else:
+        print("Es prueba de integracion")
 
 
 
 def after_scenario(context, scenario):
-    random_number = random.randint(1, 10000)
-    miscreenshotname = "screenshoot" + str(random_number)
-    try:
-        allure.attach(context.driver.get_screenshot_as_png(), name=miscreenshotname,
-                      attachment_type=allure.attachment_type.PNG)
-    except Exception as e:
-        print(e)
-    #context.driver.quit()
+    if (scenario.name == "User successfully logs into the Amazon application"):
+        random_number = random.randint(1, 10000)
+        miscreenshotname = "screenshoot" + str(random_number)
+        try:
+            allure.attach(context.driver.get_screenshot_as_png(), name=miscreenshotname,
+                          attachment_type=allure.attachment_type.PNG)
+        except Exception as e:
+            print(e)
+        context.driver.quit()
+    else:
+        print("Final -------Es prueba de integracion")
