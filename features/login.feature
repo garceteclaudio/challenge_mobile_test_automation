@@ -14,4 +14,4 @@ Feature: Amazon App Login Functionality
         Then the user should be redirected to the Home section
         Examples:
             | user_email                   |
-            | test@gmail.com     |
+            | tester@gmail.com     |
