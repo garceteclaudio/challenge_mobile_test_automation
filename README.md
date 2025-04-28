@@ -47,7 +47,7 @@ This project is a technical challenge for PinApp, implementing automated tests f
 
 ## 🏃 Running Tests
 
-Run runner.py and set tags to run specif scenarios.
+Run runner.py and use tags to execute specific scenarios.
 
 ## 📊 Generating Reports
 
