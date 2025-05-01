@@ -6,8 +6,6 @@ This project is a technical challenge for PinApp, implementing automated tests f
 2. API integration testing (POST and GET)
 
 ## 📌 Project Details
-**Author**: Claudio Rodolfo Garcete  
-**Contact**: garcete.claudio@gmail.com  
 **Technologies**: Appium, Python, Behave, Allure  
 
 ## 🚀 Quick Start
