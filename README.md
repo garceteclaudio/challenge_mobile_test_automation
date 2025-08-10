@@ -40,6 +40,22 @@ This project is a technical challenge for PinApp, implementing automated tests f
 
    ```
 
+## Estructura del proyecto
+
+```text
+challenge_mobile_test_automation/
+├── config/
+│   ├── device-config.json
+├── features/
+│   ├── steps/
+│   ├── environment.py
+├── pages/
+├── behave.ini
+└── README.md
+└── requirements.txt
+└── runner.py
+```
+
 ## ⚙ Configuration
 
 ##### Mobile capabilities:
