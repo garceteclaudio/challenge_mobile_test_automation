@@ -1,44 +1,61 @@
 # Amazon Mobile & API Test Automation Challenge
 
 ## Overview
+
 This project is a technical challenge for PinApp, implementing automated tests for:
+
 1. Mobile testing of the Amazon app (login and search product functionality)
 2. API integration testing (POST and GET)
 
 ## 📌 Project Details
-**Technologies**: Appium, Python, Behave, Allure  
+
+**Technologies**: Appium, Python, Behave, Allure
 
 ## 🚀 Quick Start
 
 ## Prerequisites
+
 - Python 3.8+
 - Appium server
 - Android SDK (for mobile tests)
 - Allure commandline tools
 
 ## Installation
+
 1. Clone the repository
 2. Set up virtual environment:
    ```bash
    python -m venv venv
    source venv/bin/activate  # Linux/Mac
    venv\Scripts\activate    # Windows
+   ```
 3. Install dependencies:
-    ```bash
+   ```bash
    pip install -r requirements.txt
+   ```
 4. Create a `.env` file in the project root with:
+
    ```ini
    APP_PASSWORD=your_amazon_password_here
-   
+
+   ```
+
 ## ⚙ Configuration
 
-##### Mobile capabilities: 
+##### Mobile capabilities:
+
 - Set in environment.py
-##### API endpoints: 
+
+##### API endpoints:
+
 - Configured in test steps
-##### Report settings: 
+
+##### Report settings:
+
 - See behave.ini
+
 ##### Login credentials:
+
 - Email: Set in feature file login.feature
 
 - Password: Set in .env file
@@ -50,9 +67,11 @@ Run runner.py and use tags to execute specific scenarios.
 ## 📊 Generating Reports
 
 ### Gerate Allure HTML report
-   
+
     allure generate --single-file reports -o allure_report_output --report-name "Mi Reporte de Pruebas" --lang es --clean
- 
+
 ## 📧 Contact
+
 #### For questions or issues, please contact:
-garcete.claudio@gmail.com
+
+https://www.linkedin.com/in/cgarcete/
