@@ -4,46 +4,32 @@ import os
 from appium.options.android import UiAutomator2Options
 import allure
 import random
+import json
 
-claudio_real_device_samsung = {
-    'platformName': 'Android',
-    'deviceName': 'R5CW32TQB3F',
-    'automationName': 'UiAutomator2',
-    'appPackage': "com.amazon.mShop.android.shopping",
-    'appActivity': 'com.amazon.mShop.splashscreen.StartupActivity',
-    'autoAcceptAlerts': True,
-    'autoGrantPermissions': True,
-    'noReset': False,
-    'fullReset': False,
-    'printPageSourceOnFindFailure': True,
-    'newCommandTimeout': 800,
-    'clearDeviceLogsOnStart': True,
-    'clearSystemFiles': True,
-    'enforceAppInstall': True
-}
-
+def load_device_config(device_name):
+    try:
+        with open('config/device-config.json', 'r') as f:
+            config = json.load(f)
+            return config['devices'].get(device_name)
+    except FileNotFoundError:
+        raise FileNotFoundError("El archivo device-config.json no fue encontrado")
+    except KeyError:
+        raise KeyError(f"Dispositivo '{device_name}' no encontrado en la configuración")
 
 def before_all(context):
     load_dotenv()
     if not os.getenv('APP_PASSWORD'):
         raise EnvironmentError("Variable APP_PASSWORD no está definida en .env")
 
-
 def before_step(context, step):
-    print(
-        "....................................................................................................................................................")
+    print("....................................................................................................................................................")
     print(f"Ejecutando step: {step.name}")
-    print(
-        "....................................................................................................................................................")
-
+    print("....................................................................................................................................................")
 
 def after_step(context, step):
-    print(
-        "....................................................................................................................................................")
+    print("....................................................................................................................................................")
     print(f"Finalizo Ejecución de step: {step.name}")
-    print(
-        "....................................................................................................................................................")
-
+    print("....................................................................................................................................................")
 
 def before_scenario(context, scenario):
     # Definir los tags que deben activar el environment
@@ -53,17 +39,20 @@ def before_scenario(context, scenario):
     if not any(tag in scenario.tags for tag in TAGS_REQUERIDOS):
         return  # Salir si no tiene los tags requeridos
 
-    print(
-        "....................................................................................................................................................")
+    print("....................................................................................................................................................")
     print("En ejecucion: " + scenario.name)
     print(f"Tags del escenario: {scenario.tags}")
-    print(
-        "....................................................................................................................................................")
+    print("....................................................................................................................................................")
 
     appium_server_url = 'http://127.0.0.1:4723/wd/hub'
-    capabilities_options = UiAutomator2Options().load_capabilities(claudio_real_device_samsung)
+    
+    # Cargar capabilities desde el JSON
+    device_capabilities = load_device_config('claudio_real_device_samsung')
+    if not device_capabilities:
+        raise ValueError("No se encontraron capabilities para el dispositivo especificado")
+    
+    capabilities_options = UiAutomator2Options().load_capabilities(device_capabilities)
     context.driver = webdriver.Remote(command_executor=appium_server_url, options=capabilities_options)
-
 
 def after_scenario(context, scenario):
     # Verificar si el escenario tiene los tags requeridos

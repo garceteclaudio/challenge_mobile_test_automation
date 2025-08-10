@@ -1,0 +1,27 @@
+{
+  "devices": {
+    "claudio_real_device_samsung": {
+      "platformName": "Android",
+      "deviceName": "R5CW32TQB3F",
+      "automationName": "UiAutomator2",
+      "appPackage": "com.amazon.mShop.android.shopping",
+      "appActivity": "com.amazon.mShop.splashscreen.StartupActivity",
+      "autoAcceptAlerts": true,
+      "autoGrantPermissions": true,
+      "noReset": false,
+      "fullReset": false,
+      "printPageSourceOnFindFailure": true,
+      "newCommandTimeout": 800,
+      "clearDeviceLogsOnStart": true,
+      "clearSystemFiles": true,
+      "enforceAppInstall": true
+    },
+    "otro_dispositivo_ejemplo": {
+      "platformName": "Android",
+      "deviceName": "OTRO_DEVICE_ID",
+      "automationName": "UiAutomator2",
+      "appPackage": "com.example.app",
+      "appActivity": "com.example.app.MainActivity"
+    }
+  }
+}
